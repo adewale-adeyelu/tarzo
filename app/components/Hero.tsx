@@ -137,7 +137,7 @@ const Hero = () => {
         </div>
 
         <div className="mt-15 h-[284px] overflow-hidden">
-          <img src="/Hero-img.jpg" alt="hero" className="h-[450px] w-[290px] [clip-path:inset(0_0_37%_0)]" />
+          <img src="/Hero-img.jpg" alt="hero" className="h-[450px] w-[260px] md:w-[290px] [clip-path:inset(0_0_37%_0)]" />
         </div>
       </div>
     </section>
