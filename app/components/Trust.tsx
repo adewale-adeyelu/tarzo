@@ -63,7 +63,7 @@ const Trust = () => {
                                 <span className="text-[#170E46] font-semibold">Total Financial Visibility</span>
                             </div>
                             <h6 className="text-[#170E46] text-sm font-medium mt-1 ms-13">
-                                Track your spending, transfers, and balances <br /> in real time with a clear overview of your finances.
+                                Track your spending, transfers, and balances <br className="hidden md:block" /> in real time with a clear overview of your finances.
                             </h6>
                         </div>
                         <div className="bg-white w-full rounded-xl py-4 px-4 border border-[#8070FE2B]">
