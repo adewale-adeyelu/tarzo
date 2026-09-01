@@ -47,9 +47,11 @@ const Hero = () => {
           </a>
         </div>
 
-        <button className="bg-[#8070FE] text-white rounded-3xl px-3 py-1.5 h-9 hidden md:flex">
-          Contact Us
-        </button>
+        <a href="#footer">
+          <button className="bg-[#8070FE] text-white cursor-pointer rounded-3xl px-3 py-1.5 h-9 hidden md:flex">
+            Contact Us
+          </button>
+        </a>
 
         {/* Menu-icon */}
         <div className="md:hidden">
@@ -92,9 +94,11 @@ const Hero = () => {
               </a>
             </div>
 
-            <button className="bg-[#8070FE] text-white rounded-3xl px-3 py-1.5 h-9 hidden">
-              Contact Us
-            </button>
+            <a href="#footer">
+              <button className="bg-[#8070FE] text-white cursor-pointer rounded-3xl px-3 py-1.5 h-9 hidden md:flex">
+                Contact Us
+              </button>
+            </a>
           </div>
         </div>
       )}

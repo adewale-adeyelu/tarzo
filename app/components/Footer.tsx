@@ -14,7 +14,7 @@ const Footer = () => {
         });
     }, []);
     return (
-        <footer className="bg-[#FAFAFA] px-6 md:px-10 lg:px-16 py-10 md:py-16" data-aos="fade-up">
+        <footer className="bg-[#FAFAFA] px-6 md:px-10 lg:px-16 py-10 md:py-16" data-aos="fade-up" id="footer">
             <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-16">
 
                 {/* Brand / Description */}
