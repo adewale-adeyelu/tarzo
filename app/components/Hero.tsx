@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { HiX } from "react-icons/hi";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
 
 const Hero = () => {
   const [open, setOpen] = useState(false);
@@ -22,7 +23,13 @@ const Hero = () => {
       {/* Navbar */}
       <div className="relative px-4 lg:px-10 pt-3 flex justify-between items-center gap-8">
         <a href="#" className="w-20 h-20 flex items-center justify-center overflow-visible">
-          <img src="/Logo-img.jpg" alt="Tazro" className="w-[90px] h-[90px] object-contain" />
+          <Image
+            src="/Logo-img.jpg"
+            alt="Tazro"
+            width={90}
+            height={90}
+            className="w-[90px] h-[90px] object-contain"
+          />
         </a>
 
         <div className="space-x-3 hidden md:flex">
@@ -137,7 +144,13 @@ const Hero = () => {
         </div>
 
         <div className="mt-15 h-[284px] overflow-hidden">
-          <img src="/Hero-img.jpg" alt="hero" className="h-[450px] w-[260px] md:w-[290px] [clip-path:inset(0_0_37%_0)]" />
+          <Image
+            src="/Hero-img.jpg"
+            alt="hero"
+            width={270}
+            height={450}
+            className="h-[450px] w-[260px] md:w-[270px] [clip-path:inset(0_0_37%_0)]"
+          />
         </div>
       </div>
     </section>

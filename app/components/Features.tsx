@@ -4,6 +4,7 @@ import { LuArrowLeftRight, LuReceipt, LuRefreshCcw } from "react-icons/lu";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Image from "next/image";
 
 const Features = () => {
     useEffect(() => {
@@ -16,7 +17,13 @@ const Features = () => {
     return (  
         <div className="bg-white py-16 px-5 md:px-10" id="features">
             <h1 className="flex justify-center items-center space-x-1" data-aos="fade-up" data-aos-delay="100">
-                <img src="/Header-img.png" alt="header" />
+                <Image 
+                    src="/Header-img.png" 
+                    alt="" 
+                    width={24} 
+                    height={24} 
+                    className="object-contain"
+                />
                 <span className="text-[#170E46] font-medium text-lg">Features</span>
             </h1>
 
@@ -69,10 +76,18 @@ const Features = () => {
                             just frictionless global finance.
                         </h6>
                     </div>
-                    <div className="relative w-full max-w-[560px] overflow-hidden rounded-xl">
+                    <div className="relative w-full max-w-[560px] h-[350px] overflow-hidden rounded-xl">
 
                         {/* Mountain image */}
-                        <img src="/Features-img.jpg" alt="Tarzo" className="w-full h-[350px] object-cover" data-aos="zoom-in" data-aos-delay="200" />
+                        {/* <img src="/Features-img.jpg" alt="Tarzo" className="w-full h-[350px] object-cover" data-aos="zoom-in" data-aos-delay="200" /> */}
+                        <Image 
+                            src="/Features-img.jpg" 
+                            alt="Tarzo"
+                            fill
+                            className="object-cover"
+                            data-aos="zoom-in"
+                            data-aos-delay="200"
+                        />
 
                         {/* Transfer card */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[295px] rounded-lg bg-white py-5 px-4 shadow-lg" data-aos="zoom-in" data-aos-delay="100">
