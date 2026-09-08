@@ -1,8 +1,7 @@
-"use client"
+"use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiPlus, HiX } from "react-icons/hi";
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -85,22 +84,24 @@ const Faq = () => {
     const [openId, setOpenId] = useState<number | null>(null);
 
     const toggleFAQ = (id: number) => {
-        setOpenId(openId === id ? null : id);
+        setOpenId((currentId) => (currentId === id ? null : id));
     };
+
     useEffect(() => {
         AOS.init({
             duration: 800,
             once: true,
             offset: 100,
+            disableMutationObserver: true,
         });
     }, []);
 
     return (
         <section className="bg-white py-16 px-5 md:px-10 lg:px-16" id="faq">
-
             {/* Header */}
             <div className="flex justify-center items-center space-x-1" data-aos="fade-up">
                 <img src="/Header-img.png" alt="header" />
+
                 <span className="text-[#170E46] font-medium text-lg">
                     FAQs
                 </span>
@@ -121,7 +122,6 @@ const Faq = () => {
 
             {/* FAQ Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-start mt-10">
-
                 {faqData.map((faq) => {
                     const isOpen = openId === faq.id;
 
@@ -129,30 +129,37 @@ const Faq = () => {
                         <div
                             key={faq.id}
                             onClick={() => toggleFAQ(faq.id)}
-                            data-aos="fade-up"
-                            data-aos-delay={faq.id * 100}
-                            className={`cursor-pointer transition-all duration-200 p-6 rounded-2xl border ${
+                            className={`cursor-pointer p-6 rounded-2xl border ${
                                 isOpen
-                                ? "bg-[#F5F4FA] border-gray-200 shadow-sm"
-                                : "bg-white border-gray-100 hover:border-gray-200 shadow-sm"
-                            }`}>
-                            {/* Question */}
-                            <div className="flex justify-between items-center gap-4">
-                                <h3 className="text-[#170E46] font-medium text-base md:text-md leading-snug">
-                                    {faq.question}
-                                </h3>
+                                    ? "bg-[#F5F4FA] border-gray-200 shadow-sm"
+                                    : "bg-white border-gray-100 shadow-sm hover:border-gray-200"
+                            }`}
+                        >
+                            {/* Static FAQ Header - AOS is here */}
+                            <div data-aos="fade-up" data-aos-delay={faq.id * 100}>
+                                <div className="flex justify-between items-center gap-4">
+                                    <h3 className="text-[#170E46] font-medium text-base md:text-md leading-snug">
+                                        {faq.question}
+                                    </h3>
 
-                                <button type="button" aria-label={ isOpen ? "Close question" : "Open question" } className="text-gray-700 hover:text-black shrink-0" >
-                                    {isOpen ? (
-                                        <HiX size={20} />
-                                    ) : (
-                                        <HiPlus size={20} />
-                                    )}
-                                </button>
-
+                                    <button
+                                        type="button"
+                                        aria-label={
+                                            isOpen
+                                                ? "Close question"
+                                                : "Open question"
+                                        }
+                                        className="text-gray-700 hover:text-black shrink-0">
+                                        {isOpen ? (
+                                            <HiX size={20} />
+                                        ) : (
+                                            <HiPlus size={20} />
+                                        )}
+                                    </button>
+                                </div>
                             </div>
 
-                            {/* Answer */}
+                            {/* Answer - NO AOS, NO TRANSITION */}
                             {isOpen && (
                                 <p className="mt-4 text-gray-500 text-sm leading-relaxed border-t border-gray-200/50 pt-3">
                                     {faq.answer}
@@ -165,4 +172,5 @@ const Faq = () => {
         </section>
     );
 };
+
 export default Faq;
