@@ -138,7 +138,7 @@ const Faq = () => {
                             {/* Static FAQ Header - AOS is here */}
                             <div data-aos="fade-up" data-aos-delay={faq.id * 100}>
                                 <div className="flex justify-between items-center gap-4">
-                                    <h3 className="text-[#170E46] font-medium text-base md:text-md leading-snug">
+                                    <h3 className="text-[#170E46] font-medium text-base md:text-md">
                                         {faq.question}
                                     </h3>
 
